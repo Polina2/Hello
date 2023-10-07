@@ -85,4 +85,22 @@ public class AppTest
 
         assertTrue(Arrays.deepEquals(actual, expected));
     }
+
+    public void testMatrixPower() {
+        int[][] m = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        int power = 4;
+        int[][] expected = {
+                {7560, 9288, 11016},
+                {17118, 21033, 24948},
+                {26676, 32778, 38880}
+        };
+
+        int[][] actual = App.matrixPower(m, power);
+
+        assertTrue(Arrays.deepEquals(actual, expected));
+    }
 }

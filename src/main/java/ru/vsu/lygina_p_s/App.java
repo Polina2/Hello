@@ -40,4 +40,14 @@ public class App
         }
         return res;
     }
+
+    public static int[][] matrixPower(int[][] m, int pow) {
+        if (pow == 1)
+            return m;
+        if (pow % 2 == 0) {
+            int[][] tmp = matrixPower(m, pow / 2);
+            return matrixMultiply(tmp, tmp);
+        }
+        return matrixMultiply(matrixPower(m, pow - 1), m);
+    }
 }
